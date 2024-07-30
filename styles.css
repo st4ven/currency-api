@@ -44,7 +44,7 @@ input::placeholder {
     color: #b7b7b7;
 }
 
-input, .converted {
+select, input, .converted {
     border: none;
     background-color: #ededed;
     padding: 10px;
