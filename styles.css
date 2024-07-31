@@ -51,6 +51,10 @@ select, input, .converted {
     border-radius: 8px;
 }
 
+.start select, .finish select{
+    cursor: pointer;
+}
+
 label, .result {
     font-size: 15px;
 }
