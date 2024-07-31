@@ -12,7 +12,29 @@ async function getCurr(fromElement, toElement, currAmount) {
         const response = await fetch(link + key + "/pair/" + fromElement + "/" + toElement + "/" + currAmount);
         let data = await response.json();
     
-        amount.innerHTML = data.conversion_result;
+        switch (toElement) {
+            case 'HKD':
+            case 'CAD':
+            case 'AUD':
+            case 'USD':
+                amount.innerHTML = '$';
+                break;
+            case 'GBP':
+            case 'EUR':
+                amount.innerHTML = '£';
+                break;
+            case 'CHF':
+                amount.innerHTML = 'CHF';
+                break;
+            case 'JPY':
+            case 'CNY':
+                amount.innerHTML = '¥';
+                break;
+            case 'VND':
+                amount.innerHTML = '₫';
+                break;
+        }
+        amount.innerHTML += data.conversion_result;
     } catch (error) {
         alert("Please enter a sufficient amount!");
     }
